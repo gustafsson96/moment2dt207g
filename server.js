@@ -21,7 +21,6 @@ connection.connect((err) => {
     if (err) {
         console.log("Connection failed: " + err);
     }
-
     console.log("Connected to database");
 });
 
