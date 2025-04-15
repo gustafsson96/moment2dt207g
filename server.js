@@ -25,6 +25,36 @@ connection.connect((err) => {
     console.log("Connected to database");
 });
 
+// Routes
+
+// Routing for
+app.get("/", (req, res) => {
+
+});
+
+// Route to collect work experience data
+app.get("/work_experience", (req, res) => {
+    connection.query(`SELECT * FROM work_experience;`, (err, results) => {
+        if (err) {
+            res.status(500).json({ error: "Something went wrong: " + err });
+            return;
+        }
+        res.status(200).json(results);
+    })
+});
+
+// Route to add work experience
+app.post("/work_experience", (req, res) => {
+
+});
+
+// Route to delete work experience
+app.get("delete/:id/", (req, res) => {
+
+});
+
+
+// Start server
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
