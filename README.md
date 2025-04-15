@@ -43,7 +43,7 @@ A work_experience object is sent/returned as a JSON object. An example is presen
     "location": "Stockholm",<br>
     "start_date": "2023-01-10",<br>
     "end_date": "2025-01-10",<br>
-    "description": "Developed and maintained software applications."<br>
+    "description": "Developed and maintained software applications."
     <br>
   }
 
