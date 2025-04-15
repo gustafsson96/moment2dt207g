@@ -37,17 +37,15 @@ The installation script will create the following database table:
 
 A work_experience object is sent/returned as a JSON object. An example is presented below:
 
-{
-  "message": "Work experience added",
-  "work_experience": {
+{ <br>
     "company_name": "Tech Corp",
     "job_title": "Software Developer",
     "location": "Stockholm",
     "start_date": "2023-01-10",
     "end_date": "2025-01-10",
     "description": "Developed and maintained software applications."
+    <br>
   }
-}
 
 Additional notes: 
 * When creating a work experience, ensure company_name, job_title, location and start_date are provided. end_date and description are optional. 
