@@ -72,8 +72,17 @@ app.post("/work_experience", (req, res) => {
 });
 
 // Route to delete work experience
-app.get("delete/:id/", (req, res) => {
+app.get("/delete/:id/", (req, res) => {
+    const work_experience_id = req.params.id;
 
+    connection.query(`DELETE FROM work_experience WHERE id = ?`, [work_experience_id], (err) => {
+        if (err) {
+            console.error("Error deleting entry: ", err.message);
+            return res.status(500).send("Something went wrong");
+        }
+
+        res.redirect("/work_experience")
+    });
 });
 
 
