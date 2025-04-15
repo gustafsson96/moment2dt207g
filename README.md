@@ -16,7 +16,6 @@ This API uses a MySQL-database. For installation, follow these steps:
 6. Run the install script: node install.js
 
 The installation script will create the following database table: 
-work_experience(id, company_name, job_title, location, start_date, end_date, description)
 
 | Column Name     | Data Type            | Description                   | Nullable |
 |-----------------|----------------------|-------------------------------|----------|
@@ -28,6 +27,33 @@ work_experience(id, company_name, job_title, location, start_date, end_date, des
 | `end_date`      | DATE                 | End date of employment         | Yes      |
 | `description`   | TEXT                 | Job description                | Yes      |
 
-## Use
+## Use API
 
-##
+| Method    | End Point         | Description  |
+|-----------------|----------------------|---------|
+| GET   | /work_experience      | Get all work experience.|
+| POST  | /work_experience      | Add a new work experience.|
+| GET   | /delete/:id/"         | Delete a work experience by id. |
+
+A work_experience object is sent/returned as a JSON object. An example is presented below:
+
+{
+  "message": "Work experience added",
+  "work_experience": {
+    "company_name": "Tech Corp",
+    "job_title": "Software Developer",
+    "location": "Stockholm",
+    "start_date": "2023-01-10",
+    "end_date": "2025-01-10",
+    "description": "Developed and maintained software applications."
+  }
+}
+
+Additional notes: 
+* When creating a work experience, ensure company_name, job_title, location and start_date are provided. end_date and description are optional. 
+* Deleting a work experience will remove the entry from the database.
+
+
+
+
+
