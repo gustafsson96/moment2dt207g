@@ -42,8 +42,8 @@ app.post("/work_experience", (req, res) => {
     let {company_name, job_title, location, start_date, end_date, description } = req.body;
 
     // Validate user input by making sure fields are not empty (except for end_date and description that allow null)
-    if (!company_name || !job_title || !location || !start_date ) {
-        return res.status(400).json({ error: "Company name, job title, location and start date are required."})
+    if (!company_name || !job_title || !location || !start_date|| !description) {
+        return res.status(400).json({ error: "Company name, job title, location, start date and description are required."})
     }
 
     connection.query(`INSERT INTO work_experience(company_name, job_title, location, start_date, end_date, description) VALUES (?, ?, ?, ?, ?, ?);`, [company_name, job_title, location, start_date, end_date, description], (err, results) => {
