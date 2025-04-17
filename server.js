@@ -26,11 +26,6 @@ connection.connect((err) => {
 
 // Routes
 
-// Routing for
-app.get("/", (req, res) => {
-
-});
-
 // Route to collect work experience data
 app.get("/work_experience", (req, res) => {
     connection.query(`SELECT * FROM work_experience;`, (err, results) => {
