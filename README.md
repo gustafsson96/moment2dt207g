@@ -2,8 +2,6 @@
 
 This project makes up the first part of my contribution for moment 2 in the course "Backend-baserad webbutveckling" (dt207g) at Mittuniversitetet, Sundsvall. 
 
-## Link
-
 ## Installation
 
 This API uses a MySQL-database. For installation, follow these steps:
