@@ -31,7 +31,8 @@ The installation script will create the following database table:
 |-----------------|----------------------|---------|
 | GET   | /work_experience      | Get all work experience.|
 | POST  | /work_experience      | Add a new work experience.|
-| GET   | /delete/:id/"         | Delete a work experience by id. |
+| PUT  | /work_experience/:id/      | Update a work experience by id.|
+| DELETE   | /work_experience/:id/         | Delete a work experience by id. |
 
 A work_experience object is sent/returned as a JSON object. An example is presented below:
 
