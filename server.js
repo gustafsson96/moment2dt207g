@@ -99,7 +99,7 @@ app.put("/work_experience/:id", (req, res) => {
 app.delete("/work_experience/:id", (req, res) => {
     const work_experience_id = req.params.id;
 
-    connection.query(`DELETE FROM work_experience WHERE id = ?`, [work_experience_id], (err) => {
+    connection.query(`DELETE FROM work_experience WHERE id = ?`, [work_experience_id], (err, result) => {
         if (err) {
             console.error("Error deleting entry: ", err.message);
             return res.status(500).send("Something went wrong");
