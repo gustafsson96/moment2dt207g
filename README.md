@@ -23,7 +23,7 @@ The installation script will create the following database table:
 | `location`      | VARCHAR(50)          | Job location                   | No       |
 | `start_date`    | DATE                 | Start date of employment       | No       |
 | `end_date`      | DATE                 | End date of employment         | Yes      |
-| `description`   | TEXT                 | Job description                | Yes      |
+| `description`   | TEXT                 | Job description                | No      |
 
 ## Use API
 
