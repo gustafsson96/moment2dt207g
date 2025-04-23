@@ -39,11 +39,11 @@ app.get("/work_experience", (req, res) => {
 
 // Route to add work experience
 app.post("/work_experience", (req, res) => {
-    let {company_name, job_title, location, start_date, end_date, description } = req.body;
+    let { company_name, job_title, location, start_date, end_date, description } = req.body;
 
     // Validate user input by making sure fields are not empty (except for end_date that allow null)
-    if (!company_name || !job_title || !location || !start_date|| !description) {
-        return res.status(400).json({ error: "Company name, job title, location, start date and description are required."})
+    if (!company_name || !job_title || !location || !start_date || !description) {
+        return res.status(400).json({ error: "Company name, job title, location, start date and description are required." })
     }
 
     connection.query(`INSERT INTO work_experience(company_name, job_title, location, start_date, end_date, description) VALUES (?, ?, ?, ?, ?, ?);`, [company_name, job_title, location, start_date, end_date, description], (err, results) => {
@@ -62,6 +62,36 @@ app.post("/work_experience", (req, res) => {
         };
 
         res.status(201).json({ message: "Work experience added", work_experience });
+    });
+});
+
+// Route to update work experience
+app.put("/work_experience/:id", (req, res) => {
+    const work_experience_id = req.params.id;
+    const { company_name, job_title, location, start_date, end_date, description } = req.body;
+
+    // Basic validation
+    if (!company_name || !job_title || !location || !start_date || !description) {
+        return res.status(400).json({ error: "Company name, job title, location, start date and description are required." })
+    }
+
+    const updateQuery = `
+        UPDATE work_experience
+        SET company_name = ?, job_title = ?, location = ?, start_date = ?, end_date = ?, description = ?
+        WHERE id = ?
+    `;
+
+    connection.query(updateQuery, [company_name, job_title, location, start_date, end_date, description, work_experience_id], (err, result) => {
+        if (err) {
+            res.status(500).json({ error: "Something went wrong: " + err });
+            return;
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "No work experience entry found with that ID." });
+        }
+
+        res.status(200).json({ message: "Work experience updated successfully." });
     });
 });
 
