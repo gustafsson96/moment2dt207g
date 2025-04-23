@@ -1,6 +1,6 @@
 # Moment 2 DT207G Part 1
 
-This project makes up the first part of my contribution for moment 2 in the course "Backend-baserad webbutveckling" (dt207g) at Mittuniversitetet, Sundsvall. 
+This project makes up the first part of my contribution for moment 2 in the course "Backend-baserad webbutveckling" (DT207G) at Mittuniversitetet, Sundsvall. 
 
 ## Installation
 
