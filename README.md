@@ -47,7 +47,7 @@ A work_experience object is sent/returned as a JSON object. An example is presen
   }
 
 Additional notes: 
-* When creating a work experience, ensure company_name, job_title, location, start_date and description are required. end_date is optional. 
+* When creating a work experience company_name, job_title, location, start_date and description are required. end_date is optional. 
 * Deleting a work experience will remove the entry from the database.
 
 
